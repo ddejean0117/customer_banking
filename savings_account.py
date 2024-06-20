@@ -3,7 +3,7 @@
 from Account import Account
 
 # Define a function for the Savings Account
-def create_savings_account(balance, interest_rate, months):
+def create_savings_account(self, balance, interest_rate, months):
     """Creates a savings account, calculates interest earned, and updates the account balance.
     
     Args:
@@ -15,27 +15,37 @@ def create_savings_account(balance, interest_rate, months):
         float: The updated savings account balance after adding the interest earned.
         And returns the interest earned.
     """
+    # Prompt the user to enter the information for each parameter.
+    balance = float(input("Enter the balance of the savings account: "))
+    interest_rate = float(input("Enter the interest rate of the savings account: "))
+    months = int(input("Enter the number of months of the investment: "))
+    
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
-    #  Hint: You need to add the interest as a value, i.e, 0.
+    # Hint: You need to add the interest as a value, i.e, 0.
 
-    class SavingsAccount(Account):
+    savings = Account(balance, interest_rate)
     
-        """Creating a savings Account class with methods"""
-        def __init__(self, balance, interest):
-    
-        # Call the parent class's __init__ method and pass the required arguments
-            Account.__init__(self, balance, interest)
-
-        # This method gets the length of months for the CD.
-        def get_months(self):
-            """Gets the length of the investment"""
-            return self.months
-
-
     # Calculate interest earned
-    interest_earned = balance * (SavingsAccount.set_interest()/100 * SavingsAccount.get_months()/12) 
+    interest_earned = float(balance * (SavingsAccount.set_interest()/100 * SavingsAccount.get_months()/12)) 
     print(f"Your interest earned is : {interest_earned} ")
-    
+
+    # Calculate new balance
+    balance += interest_earned
+    """Creating a savings Account class with methods"""
+
+    # Call the parent class's __init__ method and pass the required arguments
+    Account.__init__(self, balance, interest_rate)
+
+    return self.interest_earned
+    return self.balance
+
+    # # This method gets the length of months for the CD.
+    # def get_months(self):
+    #     """Gets the length of the investment"""
+    #     return self.months
+
+
+
 
     # Update the savings account balance by adding the interest earned
     # ADD YOUR CODE HERE
@@ -47,4 +57,4 @@ def create_savings_account(balance, interest_rate, months):
     # ADD YOUR CODE HERE
 
     # Return the updated balance and interest earned.
-    return  # ADD YOUR CODE HERE
+    # ADD YOUR CODE HERE
