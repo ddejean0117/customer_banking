@@ -54,10 +54,10 @@ interest_rate = float(input("Enter the interest rate of the savings account: "))
 months = int(input("Enter the number of months of the investment: "))
 
 # Capture the return result of the create_savings_account function in a tuple
-result = create_savings_account(balance, interest_rate, months)
+savings_result = create_savings_account(balance, interest_rate, months)
 
-print(f"Your interest earned is : ${result[0]} ")
-print(f"Your new balance with interest is : ${result[1]} ")
+print(f"Your interest earned is: ${savings_result[0]} ")
+print(f"Your new balance with interest is: ${savings_result[1]} ")
 
 
     # # This method gets the length of months for the CD.

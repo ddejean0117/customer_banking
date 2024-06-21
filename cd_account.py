@@ -1,5 +1,7 @@
 """Import the Account class from the Account.py file."""
 # ADD YOUR CODE HERE
+from Account import Account
+
 
 def create_cd_account(balance, interest_rate, months):
     """Creates a CD account, calculates interest earned, and updates the account balance.
@@ -13,6 +15,42 @@ def create_cd_account(balance, interest_rate, months):
         float: The updated CD account balance after adding the interest earned.
         And returns the interest earned.
     """
+    # Create an instance of the `Account` class and pass in the balance and interest parameters.
+    CD = Account(balance, interest_rate)
+    
+    # Set earned interest to 0
+    CD.set_interest(0)
+
+    # Calculate interest earned
+    interest_earned = round(float(balance * (interest_rate/100 * months/12)),2)
+
+    # Calculate new balance
+    balance += interest_earned
+
+    # Use the setter methods to change the information
+    CD.set_balance(balance)
+    CD.set_interest(interest_earned)
+
+    # print savings instance
+    print(CD.balance) 
+    print(CD.interest)
+
+    # Return interest earned and balance values in a tuple
+    return interest_earned, balance
+
+# Prompt the user to enter the information for each parameter.
+balance = float(input("Enter the balance of the savings account: "))
+interest_rate = float(input("Enter the interest rate of the savings account: "))
+months = int(input("Enter the number of months of the investment: "))
+
+# Capture the return result of the create_savings_account function in a tuple
+CDresult = create_cd_account(balance, interest_rate, months)
+
+print(f"Your interest earned is: ${CDresult[0]} ")
+print(f"Your new balance with interest is: ${CDresult[1]} ")
+
+
+
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
     #  Hint: You need to add the interest as a value, i.e, 0.
     # ADD YOUR CODE HERE
@@ -30,4 +68,4 @@ def create_cd_account(balance, interest_rate, months):
     # ADD YOUR CODE HERE
 
     # Return the updated balance and interest earned.
-    return  # ADD YOUR CODE HERE
+    # ADD YOUR CODE HERE
