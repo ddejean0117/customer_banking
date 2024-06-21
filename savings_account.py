@@ -17,42 +17,48 @@ def create_savings_account(balance, interest_rate, months):
         And returns the interest earned.
     """
     
-    #self.months = months
-    
-    
+    """Creating a savings Account class with methods"""
+ 
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
-    # Hint: You need to add the interest as a value, i.e, 0.
-    # if __name__=="__main__":
-    # savings = Account(balance, interest_rate)
-
-    # # Print the details of the savings account:
-    # print(savings)
-    # print(f"Balance: {savings.balance}")
-    # print(f"Interest Rate: {savings.interest_rate}")
+    savings = Account(balance, interest_rate)
+    
+    # Set earned interest to 0
+    savings.set_interest(0)
 
     # Calculate interest earned
-    interest_earned = 0
     interest_earned = round(float(balance * (interest_rate/100 * months/12)),2)
 
     # Calculate new balance
     balance += interest_earned
-    
+
+    # Use the setter methods to change the information
+    savings.set_balance(balance)
+    savings.set_interest(interest_earned)
+
+    # print savings instance
+    print(savings.balance) 
+    print(savings.interest)
+
+    # Return interest earned and balance values in a tuple
     return interest_earned, balance
 
-    """Creating a savings Account class with methods"""
 
     # Call the parent class's __init__ method and pass the required arguments
     Account.__init__(self, balance, interest_rate)
+    #self.months = months
+    # if __name__=="__main__":
 
 # Prompt the user to enter the information for each parameter.
 balance = float(input("Enter the balance of the savings account: "))
 interest_rate = float(input("Enter the interest rate of the savings account: "))
 months = int(input("Enter the number of months of the investment: "))
 
+# Capture the return result of the create_savings_account function in a tuple
 result = create_savings_account(balance, interest_rate, months)
 
 print(f"Your interest earned is : ${result[0]} ")
 print(f"Your new balance with interest is : ${result[1]} ")
+
 
     # # This method gets the length of months for the CD.
     # def get_months(self):
