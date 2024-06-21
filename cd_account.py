@@ -19,7 +19,7 @@ def create_cd_account(balance, interest_rate, months):
     CD = Account(balance, interest_rate)
     
     # Set earned interest to 0
-    CD.set_interest(0)
+    #CD.set_interest(0)
 
     # Calculate interest earned
     interest_earned = round(float(balance * (interest_rate/100 * months/12)),2)
@@ -32,22 +32,26 @@ def create_cd_account(balance, interest_rate, months):
     CD.set_interest(interest_earned)
 
     # print savings instance
-    print(CD.balance) 
-    print(CD.interest)
+    # print(CD.balance) 
+    # print(CD.interest)
 
     # Return interest earned and balance values in a tuple
-    return interest_earned, balance
+    return balance, interest_earned
 
 # Prompt the user to enter the information for each parameter.
-balance = float(input("Enter the balance of the savings account: "))
-interest_rate = float(input("Enter the interest rate of the savings account: "))
-months = int(input("Enter the number of months of the investment: "))
+# balance = float(input("Enter the balance of the CD account: "))
+# interest_rate = float(input("Enter the interest rate of the CD account: "))
+# months = int(input("Enter the number of months of the CD investment: "))
+
+balance = 0
+interest_rate = 0
+months = 0
 
 # Capture the return result of the create_savings_account function in a tuple
-CDresult = create_cd_account(balance, interest_rate, months)
+#CDresult = create_cd_account(balance, interest_rate, months)
 
-print(f"Your interest earned is: ${CDresult[0]} ")
-print(f"Your new balance with interest is: ${CDresult[1]} ")
+# print(f"Your interest earned is: ${CDresult[1]} ")
+# print(f"Your new balance with interest is: ${CDresult[0]} ")
 
 
 

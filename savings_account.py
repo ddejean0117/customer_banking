@@ -36,11 +36,11 @@ def create_savings_account(balance, interest_rate, months):
     savings.set_interest(interest_earned)
 
     # print savings instance
-    print(savings.balance) 
-    print(savings.interest)
+    # print(savings.balance) 
+    # print(savings.interest)
 
     # Return interest earned and balance values in a tuple
-    return interest_earned, balance
+    return balance, interest_earned
 
 
     # Call the parent class's __init__ method and pass the required arguments
@@ -49,15 +49,19 @@ def create_savings_account(balance, interest_rate, months):
     # if __name__=="__main__":
 
 # Prompt the user to enter the information for each parameter.
-balance = float(input("Enter the balance of the savings account: "))
-interest_rate = float(input("Enter the interest rate of the savings account: "))
-months = int(input("Enter the number of months of the investment: "))
+# balance = float(input("Enter the balance of the savings account: "))
+# interest_rate = float(input("Enter the interest rate of the savings account: "))
+# months = int(input("Enter the number of months of the investment: "))
+
+balance = 0
+interest_rate = 0
+months = 0
 
 # Capture the return result of the create_savings_account function in a tuple
-savings_result = create_savings_account(balance, interest_rate, months)
+#savings_result = create_savings_account(balance, interest_rate, months)
 
-print(f"Your interest earned is: ${savings_result[0]} ")
-print(f"Your new balance with interest is: ${savings_result[1]} ")
+# print(f"Your interest earned is: ${savings_result[1]} ")
+# print(f"Your new balance with interest is: ${savings_result[0]} ")
 
 
     # # This method gets the length of months for the CD.
